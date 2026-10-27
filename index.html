@@ -11,33 +11,27 @@
 
 <body>
 
+    <!-- หน้าหลัก: ทุกอย่างอยู่ตรงกลาง -->
     <div class="main-layout">
         <header class="header">
             <h1>✨ โหลแก้วคำอวยพร COSCI ✨</h1>
             <p class="subtitle">จิ้มที่โหลแก้วหรือกดปุ่มเพื่อรับพลังใจจากรุ่นพี่ COSCI #67-69!</p>
         </header>
 
-        <!-- โหลแก้วแกนกลาง -->
+        <!-- โหลแก้ว -->
         <div class="jar-wrapper">
             <div class="jar-container" id="jarContainer">
-
-                <!-- ฝาโหล -->
                 <div class="jar-cap">
                     <div class="cap-shine"></div>
                 </div>
                 <div class="jar-neck"></div>
-
-                <!-- เชือกผูกพร้อมป้ายดาว -->
                 <div class="jar-rope">
                     <div class="hanging-tag">⭐</div>
                 </div>
-
-                <!-- ตัวโหลแก้ว -->
                 <div class="jar-body">
                     <div class="glass-shine-left"></div>
                     <div class="glass-shine-right"></div>
 
-                    <!-- ดาวนูนเรืองแสง -->
                     <div class="stars-container">
                         <span class="star s-pink star-1">⭐</span>
                         <span class="star s-yellow star-2">⭐</span>
@@ -53,7 +47,6 @@
                         <span class="star s-orange star-12">⭐</span>
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -61,7 +54,7 @@
         <button class="draw-btn" id="drawBtn">🎲 สุ่มคำอวยพร</button>
     </div>
 
-    <!-- Modal ป๊อปอัป (ซ่อนไว้ก่อน รอจิ้มถึงจะเด้งขึ้นมากลางจอ) -->
+    <!-- Popup Modal (ซ่อนสนิท รอจนกว่าจะกดสุ่มถึงจะเด้งขึ้นมากลางจอ) -->
     <div class="modal-overlay" id="wishModal">
         <div class="wish-card">
             <span class="close-btn" id="closeBtn">&times;</span>
