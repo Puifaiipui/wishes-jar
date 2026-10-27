@@ -4,39 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>โหลแก้วคำอวยพร 🍯✨</title>
+    <title>COSCI Fortune Jar - Open House</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>✨ โหลแก้วคำอวยพร ✨</h1>
-        <p class="subtitle">จิ้มที่โหลแก้วหรือกดปุ่มเพื่อสุ่มคำอวยพรน่ารักๆ!</p>
+    <div class="main-layout">
+        <header class="header">
+            <h1>✨ โหลแก้วคำอวยพร COSCI ✨</h1>
+            <p class="subtitle">จิ้มที่โหลแก้วหรือกดปุ่มเพื่อรับพลังใจจากรุ่นพี่ COSCI #67-69!</p>
+        </header>
 
-        <!-- โหลแก้ว -->
-        <div class="jar-container" id="jarContainer">
-            <div class="jar-lid"></div>
-            <div class="jar-body">
-                <div class="paper paper-1"></div>
-                <div class="paper paper-2"></div>
-                <div class="paper paper-3"></div>
-                <div class="paper paper-4"></div>
-                <div class="paper paper-5"></div>
+        <!-- โหลแก้วใหญ่ทรงอ้วนป้อม -->
+        <div class="jar-wrapper">
+            <div class="jar-container" id="jarContainer">
+
+                <!-- ฝาเกลียวสีม่วงแก้ว -->
+                <div class="jar-cap">
+                    <div class="cap-shine"></div>
+                </div>
+                <div class="jar-neck"></div>
+
+                <!-- เชือกผูกพร้อมป้ายดาว -->
+                <div class="jar-rope">
+                    <div class="rope-knot"></div>
+                    <div class="hanging-tag">⭐</div>
+                </div>
+
+                <!-- ตัวโหลแก้วใส -->
+                <div class="jar-body">
+                    <div class="glass-reflection-left"></div>
+                    <div class="glass-reflection-right"></div>
+
+                    <!-- ดาวนูน 3D ยั้วเยี้ย 22 ดวง -->
+                    <div class="stars-container">
+                        <div class="star s-pink s-lg pos-1">⭐</div>
+                        <div class="star s-yellow s-xl pos-2">⭐</div>
+                        <div class="star s-blue s-lg pos-3">⭐</div>
+                        <div class="star s-purple s-md pos-4">⭐</div>
+                        <div class="star s-green s-lg pos-5">⭐</div>
+                        <div class="star s-orange s-xl pos-6">⭐</div>
+                        <div class="star s-pink s-md pos-7">⭐</div>
+                        <div class="star s-yellow s-lg pos-8">⭐</div>
+                        <div class="star s-blue s-xl pos-9">⭐</div>
+                        <div class="star s-purple s-lg pos-10">⭐</div>
+                        <div class="star s-green s-md pos-11">⭐</div>
+                        <div class="star s-orange s-lg pos-12">⭐</div>
+                        <div class="star s-pink s-xl pos-13">⭐</div>
+                        <div class="star s-yellow s-md pos-14">⭐</div>
+                        <div class="star s-blue s-lg pos-15">⭐</div>
+                        <div class="star s-purple s-xl pos-16">⭐</div>
+                        <div class="star s-green s-lg pos-17">⭐</div>
+                        <div class="star s-orange s-md pos-18">⭐</div>
+                        <div class="star s-pink s-lg pos-19">⭐</div>
+                        <div class="star s-yellow s-xl pos-20">⭐</div>
+                        <div class="star s-blue s-md pos-21">⭐</div>
+                        <div class="star s-purple s-lg pos-22">⭐</div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
         <!-- ปุ่มสุ่ม -->
-        <button id="drawBtn" class="draw-btn">🎲 สุ่มคำอวยพร</button>
+        <button class="draw-btn" id="drawBtn">🎲 สุ่มคำอวยพร</button>
+    </div>
 
-        <!-- หน้าต่างป๊อปอัปคำอวยพร -->
-        <div class="modal-overlay" id="wishModal">
-            <div class="wish-card">
-                <span class="close-btn" id="closeBtn">&times;</span>
-                <div class="wish-icon">💖</div>
-                <p class="wish-text" id="wishText">กำลังสุ่ม...</p>
-                <button class="modal-again-btn" id="againBtn">สุ่มใหม่อีกครั้ง</button>
-            </div>
+    <!-- Modal ป๊อปอัป -->
+    <div class="modal-overlay" id="wishModal">
+        <div class="wish-card">
+            <span class="close-btn" id="closeBtn">&times;</span>
+            <div class="wish-icon">🌟</div>
+            <p class="wish-text">กำลังโหลดคำอวยพร...</p>
+            <button class="modal-again-btn">สุ่มอีกครั้ง</button>
         </div>
     </div>
 
