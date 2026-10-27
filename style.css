@@ -32,7 +32,7 @@ body {
 }
 
 h1 {
-    font-size: 3.2rem;
+    font-size: 10rem;
     /* ตัวหนังสือใหญ่สะใจ */
     color: #e5c9ff;
     text-shadow: 0 0 20px rgba(229, 201, 255, 0.6);
@@ -40,7 +40,7 @@ h1 {
 }
 
 .subtitle {
-    font-size: 1.4rem;
+    font-size: 5rem;
     color: #bfa3e6;
 }
 
