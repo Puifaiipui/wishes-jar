@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โหลแก้วคำอวยพร 🍯✨</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>✨ โหลแก้วคำอวยพร ✨</h1>
+        <p class="subtitle">จิ้มที่โหลแก้วหรือกดปุ่มเพื่อสุ่มคำอวยพรน่ารักๆ!</p>
+
+        <!-- โหลแก้ว -->
+        <div class="jar-container" id="jarContainer">
+            <div class="jar-lid"></div>
+            <div class="jar-body">
+                <div class="paper paper-1"></div>
+                <div class="paper paper-2"></div>
+                <div class="paper paper-3"></div>
+                <div class="paper paper-4"></div>
+                <div class="paper paper-5"></div>
+            </div>
+        </div>
+
+        <!-- ปุ่มสุ่ม -->
+        <button id="drawBtn" class="draw-btn">🎲 สุ่มคำอวยพร</button>
+
+        <!-- หน้าต่างป๊อปอัปคำอวยพร -->
+        <div class="modal-overlay" id="wishModal">
+            <div class="wish-card">
+                <span class="close-btn" id="closeBtn">&times;</span>
+                <div class="wish-icon">💖</div>
+                <p class="wish-text" id="wishText">กำลังสุ่ม...</p>
+                <button class="modal-again-btn" id="againBtn">สุ่มใหม่อีกครั้ง</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
