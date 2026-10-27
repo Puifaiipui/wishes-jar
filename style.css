@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #1f0d3d 0%, #0d061a 100%);
+    background: linear-gradient(135deg, #1f0d3d 50%, #0d061a 100%);
     /* พื้นหลังสีม่วงเข้มอมดำ ดูลึกลับและสวยงาม */
     min-height: 100vh;
     display: flex;
