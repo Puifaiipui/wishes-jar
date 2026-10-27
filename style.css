@@ -32,7 +32,7 @@ body {
 }
 
 h1 {
-    font-size: 10rem;
+    font-size: 5rem;
     /* ตัวหนังสือใหญ่สะใจ */
     color: #e5c9ff;
     text-shadow: 0 0 20px rgba(229, 201, 255, 0.6);
@@ -40,7 +40,7 @@ h1 {
 }
 
 .subtitle {
-    font-size: 5rem;
+    font-size: 3rem;
     color: #bfa3e6;
 }
 
@@ -50,7 +50,7 @@ h1 {
 }
 
 .jar-container {
-    width: 550px;
+    width: 600px;
     /* ขยายโหลแก้วใหญ่ขึ้น x3 เท่า */
     display: flex;
     flex-direction: column;
