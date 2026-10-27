@@ -204,18 +204,22 @@ h1 {
 }
 
 .modal-again-btn {
-    background: #2c1a4d;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 8px 20px;
-    border-radius: 15px;
-    color: #d1b3ff;
+    background: rgba(138, 79, 255, 0.2);
+    border: 1px solid rgba(184, 125, 255, 0.4);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #e2c9ff;
+    font-size: 0.95rem;
+    font-weight: 500;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 10px rgba(138, 79, 255, 0.2);
 }
 
 .modal-again-btn:hover {
-    background: #3c2466;
-    color: #fff;
+    background: rgba(138, 79, 255, 0.4);
+    color: #ffffff;
+    transform: translateY(-1px);
 }
 
 @keyframes shake {
