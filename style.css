@@ -6,13 +6,15 @@
 }
 
 body {
-    background: linear-gradient(135deg, #fef9d7 0%, #d2e7d6d1 100%);
+    background: linear-gradient(135deg, #1f0d3d 0%, #0d061a 100%);
+    /* พื้นหลังสีม่วงเข้มอมดำ ดูลึกลับและสวยงาม */
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #4a4a4a;
+    color: #f3f3f3;
+    /* เปลี่ยนสีตัวอักษรหลักให้สว่างขึ้น */
     padding: 20px;
 }
 
@@ -24,12 +26,14 @@ body {
 h1 {
     font-size: 1.8rem;
     margin-bottom: 8px;
-    color: #385e38;
+    color: #e2c9ff;
+    /* หัวข้อสีม่วงพาสเทลสว่าง */
+    text-shadow: 0 0 10px rgba(226, 201, 255, 0.4);
 }
 
 .subtitle {
     font-size: 0.95rem;
-    color: #666;
+    color: #b8b8b8;
     margin-bottom: 25px;
 }
 
@@ -54,25 +58,28 @@ h1 {
 .jar-lid {
     width: 120px;
     height: 25px;
-    background: #a67c52;
+    background: #c29b61;
     border-radius: 8px 8px 3px 3px;
     margin: 0 auto;
-    border: 3px solid #6b4d2f;
+    border: 3px solid #8c6437;
     position: relative;
     z-index: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .jar-body {
     width: 160px;
     height: 190px;
-    background: rgba(255, 255, 255, 0.45);
-    border: 4px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08), inset 0 0 15px rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.08);
+    /* ปรับกระจกให้โปร่งแสงแบบดาร์กโมด */
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    /* เพิ่มเงาเรืองแสงรอบโหลแก้ว ให้เด่นขึ้นบนพื้นหลังมืด */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.1), 0 0 15px rgba(180, 110, 255, 0.2);
     border-radius: 20px 20px 40px 40px;
     margin: -5px auto 0;
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(5px);
 }
 
 .paper {
@@ -80,39 +87,39 @@ h1 {
     width: 32px;
     height: 22px;
     border-radius: 4px;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .paper-1 {
-    background: #ffadad;
+    background: #ff9999;
     top: 130px;
     left: 25px;
     transform: rotate(15deg);
 }
 
 .paper-2 {
-    background: #ffd6a5;
+    background: #ffcc80;
     top: 140px;
     left: 65px;
     transform: rotate(-25deg);
 }
 
 .paper-3 {
-    background: #fdffb6;
+    background: #fff59d;
     top: 120px;
     left: 100px;
     transform: rotate(40deg);
 }
 
 .paper-4 {
-    background: #caffbf;
+    background: #a5d6a7;
     top: 100px;
     left: 45px;
     transform: rotate(-10deg);
 }
 
 .paper-5 {
-    background: #9bf6ff;
+    background: #80deea;
     top: 110px;
     left: 85px;
     transform: rotate(20deg);
@@ -120,19 +127,19 @@ h1 {
 
 /* ปุ่มกด */
 .draw-btn {
-    background: #5b8c5a;
+    background: linear-gradient(135deg, #8a4fff 0%, #b164ff 100%);
     color: white;
     border: none;
     padding: 12px 30px;
     font-size: 1.1rem;
     border-radius: 25px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(91, 140, 90, 0.3);
+    box-shadow: 0 4px 15px rgba(138, 79, 255, 0.4);
     transition: background 0.2s, transform 0.1s;
 }
 
 .draw-btn:hover {
-    background: #4a7549;
+    background: linear-gradient(135deg, #783de6 0%, #9f4fe6 100%);
     transform: translateY(-2px);
 }
 
@@ -144,8 +151,9 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.7);
+    /* ฉากหลังมืดเข้มขึ้นเพื่อให้กล่องเด้งเด่นออกมา */
+    backdrop-filter: blur(6px);
     justify-content: center;
     align-items: center;
     z-index: 10;
@@ -157,13 +165,15 @@ h1 {
 }
 
 .wish-card {
-    background: white;
+    background: #1e1333;
+    /* ตัวกล่องการ์ดปรับเป็นสีม่วงเข้มตัดกับข้อความ */
+    border: 1px solid rgba(255, 255, 255, 0.15);
     padding: 30px 25px;
     border-radius: 20px;
     max-width: 360px;
     width: 100%;
     position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(162, 89, 255, 0.2);
     animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -176,6 +186,10 @@ h1 {
     cursor: pointer;
 }
 
+.close-btn:hover {
+    color: #fff;
+}
+
 .wish-icon {
     font-size: 2.5rem;
     margin-bottom: 12px;
@@ -184,21 +198,24 @@ h1 {
 .wish-text {
     font-size: 1.15rem;
     line-height: 1.6;
-    color: #333;
+    color: #f0f0f0;
+    /* ตัวหนังสือคำอวยพรสีขาวสะอาด อ่านง่ายบนพื้นมืด */
     margin-bottom: 20px;
 }
 
 .modal-again-btn {
-    background: #f0f0f0;
-    border: none;
+    background: #2c1a4d;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 8px 20px;
     border-radius: 15px;
-    color: #555;
+    color: #d1b3ff;
     cursor: pointer;
+    transition: background 0.2s;
 }
 
 .modal-again-btn:hover {
-    background: #e2e2e2;
+    background: #3c2466;
+    color: #fff;
 }
 
 @keyframes shake {
