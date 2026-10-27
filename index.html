@@ -11,7 +11,6 @@
 
 <body>
 
-    <!-- หน้าหลัก: ทุกอย่างอยู่ตรงกลาง -->
     <div class="main-layout">
         <header class="header">
             <h1>✨ โหลแก้วคำอวยพร COSCI ✨</h1>
@@ -32,6 +31,7 @@
                     <div class="glass-shine-left"></div>
                     <div class="glass-shine-right"></div>
 
+                    <!-- ดาว 22 ดวงอัดแน่นเต็มโหล -->
                     <div class="stars-container">
                         <span class="star s-pink star-1">⭐</span>
                         <span class="star s-yellow star-2">⭐</span>
@@ -45,6 +45,16 @@
                         <span class="star s-purple star-10">⭐</span>
                         <span class="star s-green star-11">⭐</span>
                         <span class="star s-orange star-12">⭐</span>
+                        <span class="star s-pink star-13">⭐</span>
+                        <span class="star s-yellow star-14">⭐</span>
+                        <span class="star s-blue star-15">⭐</span>
+                        <span class="star s-purple star-16">⭐</span>
+                        <span class="star s-green star-17">⭐</span>
+                        <span class="star s-orange star-18">⭐</span>
+                        <span class="star s-pink star-19">⭐</span>
+                        <span class="star s-yellow star-20">⭐</span>
+                        <span class="star s-blue star-21">⭐</span>
+                        <span class="star s-purple star-22">⭐</span>
                     </div>
                 </div>
             </div>
@@ -54,13 +64,13 @@
         <button class="draw-btn" id="drawBtn">🎲 สุ่มคำอวยพร</button>
     </div>
 
-    <!-- Popup Modal (ซ่อนสนิท รอจนกว่าจะกดสุ่มถึงจะเด้งขึ้นมากลางจอ) -->
+    <!-- Popup Modal (เปลี่ยนปุ่มด้านล่างเป็นป้ายแสดงชื่อนิ่งๆ ตามเรฟ) -->
     <div class="modal-overlay" id="wishModal">
         <div class="wish-card">
             <span class="close-btn" id="closeBtn">&times;</span>
             <div class="wish-icon">🌟</div>
             <p class="wish-text">กำลังโหลดคำอวยพร...</p>
-            <button class="modal-again-btn">สุ่มอีกครั้ง</button>
+            <div class="author-badge"></div>
         </div>
     </div>
 
