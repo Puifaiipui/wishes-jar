@@ -27,7 +27,7 @@ function drawWish() {
     const selectedWish = wishes[randomIndex];
 
     wishText.textContent = selectedWish.text;
-    authorBadge.textContent = selectedWish.author; // แสดงชื่อนิ่งๆ
+    authorBadge.textContent = selectedWish.author;
 
     jarContainer.classList.add('shake');
     setTimeout(() => {
@@ -48,3 +48,48 @@ wishModal.addEventListener('click', (e) => {
         wishModal.classList.remove('active');
     }
 });
+
+/* ---------- ลูกแก้วในโหล ---------- */
+const palettes = [
+    ['rgba(190,245,230,.85)', 'rgba(110,210,190,.75)'], // มิ้นต์
+    ['rgba(255,209,232,.85)', 'rgba(245,150,200,.75)'], // ชมพู
+    ['rgba(217,204,255,.85)', 'rgba(165,139,240,.75)'], // ม่วง
+    ['rgba(196,220,255,.85)', 'rgba(130,170,245,.75)']  // ฟ้า
+];
+
+function buildOrbs() {
+    const old = jarContainer.querySelector('.orb-layer');
+    if (old) old.remove();
+
+    const layer = document.createElement('div');
+    layer.className = 'orb-layer';
+    jarContainer.appendChild(layer);
+
+    const W = layer.clientWidth;
+    const H = layer.clientHeight;
+    let y = H;
+    let row = 0;
+
+    while (y > H * 0.2) {
+        let x = row % 2 ? 26 : 0;
+        while (x < W - 30) {
+            const size = 48 + Math.random() * 16;
+            const [c1, c2] = palettes[Math.floor(Math.random() * palettes.length)];
+            const orb = document.createElement('div');
+            orb.className = 'orb';
+            orb.style.cssText = `
+                width:${size}px; height:${size}px;
+                left:${x + (Math.random() * 6 - 3)}px;
+                top:${y - size + (Math.random() * 6 - 3)}px;
+                --c1:${c1}; --c2:${c2};
+                --r:${Math.random() * 70 - 35}deg;
+                --d:${(Math.random() * 3).toFixed(2)}s;`;
+            layer.appendChild(orb);
+            x += size * 0.88;
+        }
+        y -= 46;
+        row++;
+    }
+}
+
+buildOrbs();

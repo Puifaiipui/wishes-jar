@@ -511,3 +511,76 @@ h1 {
         opacity: 1;
     }
 }
+
+/* ซ่อนดาวเดิม */
+.star {
+    display: none !important;
+}
+
+.orb-layer {
+    position: absolute;
+    left: 7%;
+    right: 7%;
+    top: 20%;
+    bottom: 5%;
+    overflow: hidden;
+    border-radius: 0 0 48px 48px;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, var(--c1), var(--c2) 75%);
+    box-shadow:
+        inset -6px -8px 14px rgba(255, 255, 255, .3),
+        inset 4px 4px 10px rgba(255, 255, 255, .45),
+        0 4px 14px rgba(190, 160, 255, .35);
+    animation: bob 4s ease-in-out infinite;
+    animation-delay: var(--d);
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.orb:hover {
+    transform: scale(1.12);
+}
+
+/* กระดาษด้านใน */
+.orb::before {
+    content: "";
+    position: absolute;
+    width: 26%;
+    height: 38%;
+    left: 37%;
+    top: 34%;
+    background: linear-gradient(90deg, #fff6df, #ffeccc);
+    border-radius: 3px;
+    transform: rotate(var(--r));
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+    opacity: .9;
+}
+
+/* เงาสะท้อนแววรุ้งด้านบน */
+.orb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 30% 24%, rgba(255, 255, 255, .95) 0 7%, transparent 8%),
+        linear-gradient(135deg, rgba(255, 255, 255, .45), transparent 40%,
+            rgba(255, 130, 220, .25) 70%, rgba(120, 220, 255, .3));
+    mix-blend-mode: screen;
+}
+
+@keyframes bob {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
