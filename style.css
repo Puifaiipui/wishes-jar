@@ -43,7 +43,7 @@ h1 {
     color: #bfa3e6;
 }
 
-/* โหลแก้วตรงกลาง */
+/* ================= โหลแก้ว ================= */
 .jar-wrapper {
     margin: 10px 0 25px;
     display: flex;
@@ -110,7 +110,9 @@ h1 {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
 }
 
+/* ป้ายดาวห้อย (ซ่อนไว้ ถ้าอยากได้คืนให้ลบบรรทัด display: none) */
 .hanging-tag {
+    display: none;
     position: absolute;
     right: 25px;
     top: 6px;
@@ -145,6 +147,8 @@ h1 {
     height: 280px;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.05));
     border-radius: 15px;
+    z-index: 5;
+    pointer-events: none;
 }
 
 .glass-shine-right {
@@ -155,210 +159,73 @@ h1 {
     height: 240px;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.02));
     border-radius: 8px;
+    z-index: 5;
+    pointer-events: none;
 }
 
-/* ดาว 22 ดวงในโหล */
-.stars-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
+/* ซ่อนดาวเดิมทั้งหมด */
+.stars-container,
 .star {
+    display: none !important;
+}
+
+/* ================= ลูกแก้ว ================= */
+.orb-layer {
     position: absolute;
-    font-size: 2.3rem;
-    user-select: none;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
-    animation: floatWiggle 3s infinite ease-in-out alternate;
+    left: 16px;
+    right: 16px;
+    top: 60px;
+    bottom: 20px;
+    z-index: 1;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, var(--c1), var(--c2) 75%);
+    box-shadow:
+        inset -5px -7px 12px rgba(255, 255, 255, .28),
+        inset 3px 3px 9px rgba(255, 255, 255, .4),
+        0 3px 10px rgba(190, 160, 255, .3);
+    animation: bob 4s ease-in-out infinite;
+    animation-delay: var(--d);
     cursor: pointer;
+    transition: transform .2s;
 }
 
-.s-pink {
-    color: #ff9ebb;
-    text-shadow: 0 0 10px #ff9ebb;
+.orb:hover {
+    transform: scale(1.1);
 }
 
-.s-yellow {
-    color: #ffe680;
-    text-shadow: 0 0 10px #ffe680;
+/* กระดาษด้านใน */
+.orb::before {
+    content: "";
+    position: absolute;
+    width: 26%;
+    height: 38%;
+    left: 37%;
+    top: 34%;
+    background: linear-gradient(90deg, #fff6df, #ffeccc);
+    border-radius: 3px;
+    transform: rotate(var(--r));
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+    opacity: .9;
 }
 
-.s-blue {
-    color: #80d4ff;
-    text-shadow: 0 0 10px #80d4ff;
+/* เงาสะท้อนแวววาว */
+.orb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 30% 24%, rgba(255, 255, 255, .95) 0 7%, transparent 8%),
+        linear-gradient(135deg, rgba(255, 255, 255, .45), transparent 40%,
+            rgba(255, 130, 220, .25) 70%, rgba(120, 220, 255, .3));
+    mix-blend-mode: screen;
 }
 
-.s-purple {
-    color: #d19eff;
-    text-shadow: 0 0 10px #d19eff;
-}
-
-.s-green {
-    color: #a3ffb4;
-    text-shadow: 0 0 10px #a3ffb4;
-}
-
-.s-orange {
-    color: #ffb880;
-    text-shadow: 0 0 10px #ffb880;
-}
-
-/* พิกัดกระจายดาวครบ 22 ดวงทั่วโหลแบบไม่ทับกัน */
-.star-1 {
-    top: 270px;
-    left: 30px;
-    animation-delay: 0.1s;
-    transform: rotate(-15deg);
-}
-
-.star-2 {
-    top: 290px;
-    left: 90px;
-    animation-delay: 0.4s;
-    transform: rotate(10deg);
-}
-
-.star-3 {
-    top: 280px;
-    left: 160px;
-    animation-delay: 0.2s;
-    transform: rotate(-25deg);
-}
-
-.star-4 {
-    top: 300px;
-    left: 220px;
-    animation-delay: 0.7s;
-    transform: rotate(15deg);
-}
-
-.star-5 {
-    top: 310px;
-    left: 120px;
-    animation-delay: 0.3s;
-    transform: rotate(20deg);
-}
-
-.star-6 {
-    top: 240px;
-    left: 200px;
-    animation-delay: 0.8s;
-    transform: rotate(-10deg);
-}
-
-.star-7 {
-    top: 250px;
-    left: 260px;
-    animation-delay: 0.5s;
-    transform: rotate(30deg);
-}
-
-.star-8 {
-    top: 220px;
-    left: 60px;
-    animation-delay: 0.9s;
-    transform: rotate(-5deg);
-}
-
-.star-9 {
-    top: 210px;
-    left: 130px;
-    animation-delay: 0.2s;
-    transform: rotate(12deg);
-}
-
-.star-10 {
-    top: 180px;
-    left: 180px;
-    animation-delay: 0.6s;
-    transform: rotate(-18deg);
-}
-
-.star-11 {
-    top: 190px;
-    left: 250px;
-    animation-delay: 0.1s;
-    transform: rotate(22deg);
-}
-
-.star-12 {
-    top: 150px;
-    left: 80px;
-    animation-delay: 0.7s;
-    transform: rotate(-8deg);
-}
-
-.star-13 {
-    top: 140px;
-    left: 140px;
-    animation-delay: 0.3s;
-    transform: rotate(15deg);
-}
-
-.star-14 {
-    top: 160px;
-    left: 210px;
-    animation-delay: 1.0s;
-    transform: rotate(-22deg);
-}
-
-.star-15 {
-    top: 110px;
-    left: 110px;
-    animation-delay: 0.4s;
-    transform: rotate(8deg);
-}
-
-.star-16 {
-    top: 100px;
-    left: 180px;
-    animation-delay: 0.9s;
-    transform: rotate(-12deg);
-}
-
-.star-17 {
-    top: 70px;
-    left: 140px;
-    animation-delay: 0.2s;
-    transform: rotate(18deg);
-}
-
-.star-18 {
-    top: 270px;
-    left: 170px;
-    animation-delay: 0.6s;
-    transform: rotate(-30deg);
-}
-
-.star-19 {
-    top: 220px;
-    left: 230px;
-    animation-delay: 0.3s;
-    transform: rotate(5deg);
-}
-
-.star-20 {
-    top: 130px;
-    left: 50px;
-    animation-delay: 0.5s;
-    transform: rotate(-14deg);
-}
-
-.star-21 {
-    top: 80px;
-    left: 200px;
-    animation-delay: 0.8s;
-    transform: rotate(25deg);
-}
-
-.star-22 {
-    top: 320px;
-    left: 50px;
-    animation-delay: 0.2s;
-    transform: rotate(-8deg);
-}
-
-/* ปุ่มสุ่ม */
+/* ================= ปุ่มสุ่ม ================= */
 .draw-btn {
     background: linear-gradient(135deg, #9d50bb 0%, #6e48aa 100%);
     color: white;
@@ -436,7 +303,6 @@ h1 {
     margin-bottom: 25px;
 }
 
-/* ป้ายแสดงชื่อเจ้าของคำอวยพร (ดีไซน์ตามรูปเรฟ เป็นกล่องข้อความนิ่งๆ ไม่ใช่ปุ่มกด) */
 .author-badge {
     display: inline-block;
     background: linear-gradient(135deg, #8a58c3 0%, #683bb5 100%);
@@ -449,18 +315,16 @@ h1 {
     box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.2);
 }
 
-/* Animations */
-@keyframes floatWiggle {
-    0% {
-        transform: translateY(0px) rotate(0deg);
+/* ================= Animations ================= */
+@keyframes bob {
+
+    0%,
+    100% {
+        translate: 0 0;
     }
 
     50% {
-        transform: translateY(-8px) rotate(8deg);
-    }
-
-    100% {
-        transform: translateY(6px) rotate(-8deg);
+        translate: 0 -4px;
     }
 }
 
@@ -509,78 +373,5 @@ h1 {
     to {
         transform: scale(1);
         opacity: 1;
-    }
-}
-
-/* ซ่อนดาวเดิม */
-.star {
-    display: none !important;
-}
-
-.orb-layer {
-    position: absolute;
-    left: 7%;
-    right: 7%;
-    top: 20%;
-    bottom: 5%;
-    overflow: hidden;
-    border-radius: 0 0 48px 48px;
-}
-
-.orb {
-    position: absolute;
-    border-radius: 50%;
-    background: radial-gradient(circle at 35% 30%, var(--c1), var(--c2) 75%);
-    box-shadow:
-        inset -6px -8px 14px rgba(255, 255, 255, .3),
-        inset 4px 4px 10px rgba(255, 255, 255, .45),
-        0 4px 14px rgba(190, 160, 255, .35);
-    animation: bob 4s ease-in-out infinite;
-    animation-delay: var(--d);
-    cursor: pointer;
-    transition: transform .2s;
-}
-
-.orb:hover {
-    transform: scale(1.12);
-}
-
-/* กระดาษด้านใน */
-.orb::before {
-    content: "";
-    position: absolute;
-    width: 26%;
-    height: 38%;
-    left: 37%;
-    top: 34%;
-    background: linear-gradient(90deg, #fff6df, #ffeccc);
-    border-radius: 3px;
-    transform: rotate(var(--r));
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
-    opacity: .9;
-}
-
-/* เงาสะท้อนแววรุ้งด้านบน */
-.orb::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background:
-        radial-gradient(circle at 30% 24%, rgba(255, 255, 255, .95) 0 7%, transparent 8%),
-        linear-gradient(135deg, rgba(255, 255, 255, .45), transparent 40%,
-            rgba(255, 130, 220, .25) 70%, rgba(120, 220, 255, .3));
-    mix-blend-mode: screen;
-}
-
-@keyframes bob {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-4px);
     }
 }
