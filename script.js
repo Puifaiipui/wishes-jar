@@ -67,30 +67,27 @@ const palettes = {
   delay = จังหวะการขยับ (วินาที) ให้ต่างกันจะดูธรรมชาติ
 */
 const ORBS = [
-    // ชั้นล่างสุด (รวมความกว้าง 85+70+55+70 = 280 พอดีโหล)
-    { x: 0, y: 0, size: 85, color: 'pink', rot: -15, delay: 0.0 },
-    { x: 85, y: 0, size: 70, color: 'blue', rot: 20, delay: 0.8 },
-    { x: 155, y: 0, size: 55, color: 'purple', rot: -30, delay: 1.5 },
-    { x: 210, y: 0, size: 70, color: 'mint', rot: 10, delay: 0.4 },
+    // ชั้นล่างสุด (เว้นขอบซ้ายขวานิดหน่อย เพราะก้นโหลโค้ง)
+    { x: 13, y: 0, size: 64, color: 'pink', rot: -15, delay: 0.0 },
+    { x: 77, y: 0, size: 80, color: 'blue', rot: 20, delay: 0.8 },
+    { x: 157, y: 0, size: 55, color: 'purple', rot: -30, delay: 1.5 },
+    { x: 212, y: 0, size: 55, color: 'mint', rot: 10, delay: 0.4 },
 
-    // ชั้นกลาง (วางเยื้องในร่องระหว่างลูกชั้นล่าง)
-    { x: 0, y: 65, size: 55, color: 'mint', rot: 30, delay: 1.2 },
-    { x: 20, y: 66, size: 70, color: 'blue', rot: -10, delay: 0.3 },
-    { x: 75, y: 60, size: 55, color: 'purple', rot: -25, delay: 0.9 },
-    { x: 145, y: 64, size: 80, color: 'pink', rot: 15, delay: 1.9 },
-    { x: 200, y: 65, size: 70, color: 'mint', rot: 15, delay: 1.9 },
+    // ชั้นสอง (วางในร่องระหว่างลูกชั้นล่าง)
+    { x: 30, y: 61, size: 72, color: 'mint', rot: 30, delay: 1.2 },
+    { x: 113, y: 75, size: 60, color: 'pink', rot: -10, delay: 0.3 },
+    { x: 182, y: 48, size: 60, color: 'blue', rot: 15, delay: 1.9 },
 
-    // ชั้น3
-    { x: 10, y: 122, size: 55, color: 'mint', rot: -20, delay: 0.5 },
-    { x: 45, y: 125, size: 80, color: 'purple', rot: 12, delay: 1.6 },
-    { x: 125, y: 122, size: 55, color: 'pink', rot: -20, delay: 0.5 },
-    { x: 180, y: 126, size: 70, color: 'blue', rot: 28, delay: 2.3 },
+    // ชั้นสาม
+    { x: 10, y: 130, size: 70, color: 'purple', rot: -20, delay: 0.5 },
+    { x: 80, y: 123, size: 55, color: 'mint', rot: 12, delay: 1.6 },
+    { x: 160, y: 108, size: 80, color: 'purple', rot: -25, delay: 2.3 },
+    { x: 230, y: 83, size: 50, color: 'pink', rot: 28, delay: 0.9 },
 
-    // ชั้น4
-    { x: 10, y: 150, size: 70, color: 'mint', rot: -20, delay: 0.5 },
-    { x: 45, y: 155, size: 55, color: 'purple', rot: 12, delay: 1.6 },
-    { x: 125, y: 153, size: 80, color: 'pink', rot: -20, delay: 0.5 },
-    { x: 180, y: 155, size: 70, color: 'blue', rot: 28, delay: 2.3 }
+    // ชั้นบนสุด
+    { x: 65, y: 182, size: 60, color: 'blue', rot: -18, delay: 2.0 },
+    { x: 151, y: 183, size: 55, color: 'pink', rot: 22, delay: 0.6 },
+    { x: 230, y: 140, size: 50, color: 'mint', rot: -8, delay: 1.4 }
 ];
 
 function buildOrbs() {
