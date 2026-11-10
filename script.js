@@ -80,8 +80,8 @@ const ORBS = [
 
     // ชั้นสาม
     { x: 0, y: 130, size: 70, color: 'purple', rot: -20, delay: 0.5 },
-    { x: 60, y: 123, size: 55, color: 'mint', rot: 12, delay: 1.6 },
-    { x: 140, y: 108, size: 70, color: 'purple', rot: -25, delay: 2.3 },
+    { x: 70, y: 123, size: 55, color: 'mint', rot: 12, delay: 1.6 },
+    { x: 130, y: 134, size: 70, color: 'purple', rot: -25, delay: 2.3 },
     { x: 200, y: 130, size: 80, color: 'pink', rot: 28, delay: 0.9 },
 
     // ชั้นบนสุด
