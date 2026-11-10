@@ -69,9 +69,9 @@ const palettes = {
 const ORBS = [
     // ชั้นล่างสุด (เว้นขอบซ้ายขวานิดหน่อย เพราะก้นโหลโค้ง)
     { x: 13, y: 0, size: 55, color: 'pink', rot: -15, delay: 0.0 },
-    { x: 77, y: 0, size: 80, color: 'blue', rot: 20, delay: 0.8 },
-    { x: 157, y: 0, size: 55, color: 'purple', rot: -30, delay: 1.5 },
-    { x: 212, y: 0, size: 70, color: 'mint', rot: 10, delay: 0.4 },
+    { x: 67, y: 0, size: 80, color: 'blue', rot: 20, delay: 0.8 },
+    { x: 147, y: 0, size: 55, color: 'purple', rot: -30, delay: 1.5 },
+    { x: 202, y: 0, size: 70, color: 'mint', rot: 10, delay: 0.4 },
 
     // ชั้นสอง (วางในร่องระหว่างลูกชั้นล่าง)
     { x: 30, y: 61, size: 70, color: 'mint', rot: 30, delay: 1.2 },
@@ -85,9 +85,9 @@ const ORBS = [
     { x: 200, y: 134, size: 80, color: 'pink', rot: 28, delay: 0.9 },
 
     // ชั้นบนสุด
-    { x: 50, y: 182, size: 80, color: 'blue', rot: -18, delay: 2.0 },
-    { x: 135, y: 200, size: 55, color: 'pink', rot: 22, delay: 0.6 },
-    { x: 185, y: 195, size: 70, color: 'mint', rot: -8, delay: 1.4 }
+    { x: 40, y: 182, size: 80, color: 'blue', rot: -18, delay: 2.0 },
+    { x: 120, y: 200, size: 55, color: 'pink', rot: 22, delay: 0.6 },
+    { x: 160, y: 225, size: 70, color: 'mint', rot: -8, delay: 1.4 }
 ];
 
 function buildOrbs() {
