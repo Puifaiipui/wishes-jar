@@ -57,38 +57,49 @@ const palettes = [
     ['rgba(196,220,255,.85)', 'rgba(130,170,245,.75)']  // ฟ้า
 ];
 
+// ขนาดลูกแก้ว (px) สุ่มเลือกจากรายการนี้ ใส่ซ้ำเลขไหนบ่อย = ลูกขนาดนั้นเยอะขึ้น
+const SIZES = [30, 38, 38, 46, 46, 56, 64];
+
+const ROWS = 4;           // จำนวนชั้น (ลดเลข = ลูกแก้วน้อยลง)
+const PER_ROW = [4, 3, 3, 2];  // จำนวนลูกแก้วสูงสุดของแต่ละชั้น (ล่าง -> บน)
+const ROW_H = 58;         // ระยะห่างระหว่างชั้น
+
 function buildOrbs() {
-    const old = jarContainer.querySelector('.orb-layer');
+    const jarBody = document.querySelector('.jar-body');
+    const old = jarBody.querySelector('.orb-layer');
     if (old) old.remove();
 
     const layer = document.createElement('div');
     layer.className = 'orb-layer';
-    jarContainer.appendChild(layer);
+    jarBody.appendChild(layer);
 
     const W = layer.clientWidth;
     const H = layer.clientHeight;
-    let y = H;
-    let row = 0;
 
-    while (y > H * 0.2) {
-        let x = row % 2 ? 26 : 0;
-        while (x < W - 30) {
-            const size = 48 + Math.random() * 16;
+    for (let row = 0; row < ROWS; row++) {
+        const count = PER_ROW[row];
+        const slot = W / count;
+
+        for (let i = 0; i < count; i++) {
+            const size = SIZES[Math.floor(Math.random() * SIZES.length)];
+            // วางกลางช่อง ขยับซ้ายขวาเล็กน้อย
+            const cx = slot * i + slot / 2 + (Math.random() * 16 - 8);
+            const left = Math.max(0, Math.min(W - size, cx - size / 2));
+            // วางลูกเล็กให้จมลงมาติดพื้นชั้นเหมือนกองอยู่ด้วยกัน
+            const top = H - row * ROW_H - size - 2 + (Math.random() * 6 - 3);
             const [c1, c2] = palettes[Math.floor(Math.random() * palettes.length)];
+
             const orb = document.createElement('div');
             orb.className = 'orb';
             orb.style.cssText = `
                 width:${size}px; height:${size}px;
-                left:${x + (Math.random() * 6 - 3)}px;
-                top:${y - size + (Math.random() * 6 - 3)}px;
+                left:${left}px;
+                top:${top}px;
                 --c1:${c1}; --c2:${c2};
                 --r:${Math.random() * 70 - 35}deg;
                 --d:${(Math.random() * 3).toFixed(2)}s;`;
             layer.appendChild(orb);
-            x += size * 0.88;
         }
-        y -= 46;
-        row++;
     }
 }
 
