@@ -80,14 +80,14 @@ const ORBS = [
 
     // ชั้นสาม
     { x: 0, y: 130, size: 70, color: 'purple', rot: -20, delay: 0.5 },
-    { x: 50, y: 123, size: 55, color: 'mint', rot: 12, delay: 1.6 },
-    { x: 156, y: 108, size: 70, color: 'purple', rot: -25, delay: 2.3 },
-    { x: 200, y: 120, size: 80, color: 'pink', rot: 28, delay: 0.9 },
+    { x: 60, y: 123, size: 55, color: 'mint', rot: 12, delay: 1.6 },
+    { x: 140, y: 108, size: 70, color: 'purple', rot: -25, delay: 2.3 },
+    { x: 200, y: 130, size: 80, color: 'pink', rot: 28, delay: 0.9 },
 
     // ชั้นบนสุด
-    { x: 65, y: 182, size: 80, color: 'blue', rot: -18, delay: 2.0 },
-    { x: 151, y: 183, size: 55, color: 'pink', rot: 22, delay: 0.6 },
-    { x: 215, y: 180, size: 70, color: 'mint', rot: -8, delay: 1.4 }
+    { x: 50, y: 182, size: 80, color: 'blue', rot: -18, delay: 2.0 },
+    { x: 145, y: 183, size: 55, color: 'pink', rot: 22, delay: 0.6 },
+    { x: 185, y: 185, size: 70, color: 'mint', rot: -8, delay: 1.4 }
 ];
 
 function buildOrbs() {
