@@ -49,20 +49,42 @@ wishModal.addEventListener('click', (e) => {
     }
 });
 
-/* ---------- ลูกแก้วในโหล ---------- */
-const palettes = [
-    ['rgba(190,245,230,.85)', 'rgba(110,210,190,.75)'], // มิ้นต์
-    ['rgba(255,209,232,.85)', 'rgba(245,150,200,.75)'], // ชมพู
-    ['rgba(217,204,255,.85)', 'rgba(165,139,240,.75)'], // ม่วง
-    ['rgba(196,220,255,.85)', 'rgba(130,170,245,.75)']  // ฟ้า
+/* ---------- ลูกแก้วในโหล (กำหนดเอง) ---------- */
+const palettes = {
+    mint: ['rgba(190,245,230,.85)', 'rgba(110,210,190,.75)'],
+    pink: ['rgba(255,209,232,.85)', 'rgba(245,150,200,.75)'],
+    purple: ['rgba(217,204,255,.85)', 'rgba(165,139,240,.75)'],
+    blue: ['rgba(196,220,255,.85)', 'rgba(130,170,245,.75)']
+};
+
+/*
+  แต่ละลูก:
+  x     = ตำแหน่งแนวนอน (px จากซ้ายของโหล, พื้นที่กว้างประมาณ 280)
+  y     = ระยะจากก้นโหลขึ้นไป (px) 0 = วางติดพื้น
+  size  = ขนาด (px)
+  color = mint / pink / purple / blue
+  rot   = มุมกระดาษข้างใน (องศา)
+  delay = จังหวะการขยับ (วินาที) ให้ต่างกันจะดูธรรมชาติ
+*/
+const ORBS = [
+    // ชั้นล่างสุด
+    { x: 10, y: 0, size: 75, color: 'pink', rot: -15, delay: 0.0 },
+    { x: 72, y: 0, size: 40, color: 'blue', rot: 20, delay: 0.8 },
+    { x: 118, y: 0, size: 64, color: 'purple', rot: -30, delay: 1.5 },
+    { x: 190, y: 0, size: 40, color: 'mint', rot: 10, delay: 0.4 },
+    { x: 240, y: 0, size: 75, color: 'pink', rot: 25, delay: 2.1 },
+
+    // ชั้นกลาง
+    { x: 30, y: 56, size: 40, color: 'mint', rot: 30, delay: 1.2 },
+    { x: 90, y: 62, size: 75, color: 'blue', rot: -10, delay: 0.3 },
+    { x: 160, y: 66, size: 64, color: 'pink', rot: 15, delay: 1.9 },
+    { x: 212, y: 58, size: 40, color: 'purple', rot: -25, delay: 0.9 },
+
+    // ชั้นบน
+    { x: 55, y: 112, size: 64, color: 'purple', rot: 12, delay: 1.6 },
+    { x: 120, y: 120, size: 46, color: 'mint', rot: -20, delay: 0.5 },
+    { x: 190, y: 116, size: 70, color: 'blue', rot: 28, delay: 2.3 }
 ];
-
-// ขนาดลูกแก้ว (px) สุ่มเลือกจากรายการนี้ ใส่ซ้ำเลขไหนบ่อย = ลูกขนาดนั้นเยอะขึ้น
-const SIZES = [40, 56, 75];
-
-const ROWS = 5;           // จำนวนชั้น (ลดเลข = ลูกแก้วน้อยลง)
-const PER_ROW = [5, 6, 4, 3, 4];  // จำนวนลูกแก้วสูงสุดของแต่ละชั้น (ล่าง -> บน)
-const ROW_H = 58;         // ระยะห่างระหว่างชั้น
 
 function buildOrbs() {
     const jarBody = document.querySelector('.jar-body');
@@ -73,34 +95,21 @@ function buildOrbs() {
     layer.className = 'orb-layer';
     jarBody.appendChild(layer);
 
-    const W = layer.clientWidth;
     const H = layer.clientHeight;
 
-    for (let row = 0; row < ROWS; row++) {
-        const count = PER_ROW[row];
-        const slot = W / count;
-
-        for (let i = 0; i < count; i++) {
-            const size = SIZES[Math.floor(Math.random() * SIZES.length)];
-            // วางกลางช่อง ขยับซ้ายขวาเล็กน้อย
-            const cx = slot * i + slot / 2 + (Math.random() * 16 - 8);
-            const left = Math.max(0, Math.min(W - size, cx - size / 2));
-            // วางลูกเล็กให้จมลงมาติดพื้นชั้นเหมือนกองอยู่ด้วยกัน
-            const top = H - row * ROW_H - size - 2 + (Math.random() * 6 - 3);
-            const [c1, c2] = palettes[Math.floor(Math.random() * palettes.length)];
-
-            const orb = document.createElement('div');
-            orb.className = 'orb';
-            orb.style.cssText = `
-                width:${size}px; height:${size}px;
-                left:${left}px;
-                top:${top}px;
-                --c1:${c1}; --c2:${c2};
-                --r:${Math.random() * 70 - 35}deg;
-                --d:${(Math.random() * 3).toFixed(2)}s;`;
-            layer.appendChild(orb);
-        }
-    }
+    ORBS.forEach(o => {
+        const [c1, c2] = palettes[o.color];
+        const orb = document.createElement('div');
+        orb.className = 'orb';
+        orb.style.cssText = `
+            width:${o.size}px; height:${o.size}px;
+            left:${o.x}px;
+            top:${H - o.y - o.size}px;
+            --c1:${c1}; --c2:${c2};
+            --r:${o.rot}deg;
+            --d:${o.delay}s;`;
+        layer.appendChild(orb);
+    });
 }
 
 buildOrbs();
