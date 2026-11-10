@@ -87,7 +87,7 @@ const ORBS = [
     // ชั้นบนสุด
     { x: 40, y: 182, size: 80, color: 'blue', rot: -18, delay: 2.0 },
     { x: 120, y: 200, size: 55, color: 'pink', rot: 22, delay: 0.6 },
-    { x: 165, y: 215, size: 70, color: 'mint', rot: -8, delay: 1.4 }
+    { x: 170, y: 210, size: 70, color: 'mint', rot: -8, delay: 1.4 }
 ];
 
 function buildOrbs() {
