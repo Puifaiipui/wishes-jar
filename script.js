@@ -74,15 +74,23 @@ const ORBS = [
     { x: 210, y: 0, size: 70, color: 'mint', rot: 10, delay: 0.4 },
 
     // ชั้นกลาง (วางเยื้องในร่องระหว่างลูกชั้นล่าง)
-    { x: 20, y: 62, size: 55, color: 'mint', rot: 30, delay: 1.2 },
-    { x: 75, y: 66, size: 70, color: 'blue', rot: -10, delay: 0.3 },
-    { x: 145, y: 60, size: 55, color: 'purple', rot: -25, delay: 0.9 },
-    { x: 200, y: 64, size: 70, color: 'pink', rot: 15, delay: 1.9 },
+    { x: 0, y: 65, size: 55, color: 'mint', rot: 30, delay: 1.2 },
+    { x: 20, y: 66, size: 70, color: 'blue', rot: -10, delay: 0.3 },
+    { x: 75, y: 60, size: 55, color: 'purple', rot: -25, delay: 0.9 },
+    { x: 145, y: 64, size: 80, color: 'pink', rot: 15, delay: 1.9 },
+    { x: 200, y: 65, size: 70, color: 'mint', rot: 15, delay: 1.9 },
 
-    // ชั้นบน
-    { x: 45, y: 125, size: 70, color: 'purple', rot: 12, delay: 1.6 },
-    { x: 125, y: 122, size: 55, color: 'mint', rot: -20, delay: 0.5 },
-    { x: 180, y: 126, size: 70, color: 'blue', rot: 28, delay: 2.3 }
+    // ชั้น3
+    { x: 10, y: 122, size: 55, color: 'mint', rot: -20, delay: 0.5 },
+    { x: 45, y: 125, size: 80, color: 'purple', rot: 12, delay: 1.6 },
+    { x: 125, y: 122, size: 55, color: 'pink', rot: -20, delay: 0.5 },
+    { x: 180, y: 126, size: 70, color: 'blue', rot: 28, delay: 2.3 },
+
+    // ชั้น4
+    { x: 10, y: 150, size: 70, color: 'mint', rot: -20, delay: 0.5 },
+    { x: 45, y: 155, size: 55, color: 'purple', rot: 12, delay: 1.6 },
+    { x: 125, y: 153, size: 80, color: 'pink', rot: -20, delay: 0.5 },
+    { x: 180, y: 155, size: 70, color: 'blue', rot: 28, delay: 2.3 }
 ];
 
 function buildOrbs() {
