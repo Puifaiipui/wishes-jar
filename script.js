@@ -74,9 +74,9 @@ const ORBS = [
     { x: 202, y: 0, size: 70, color: 'mint', rot: 10, delay: 0.4 },
 
     // ชั้นสอง (วางในร่องระหว่างลูกชั้นล่าง)
-    { x: 30, y: 61, size: 70, color: 'mint', rot: 30, delay: 1.2 },
+    { x: 25, y: 61, size: 70, color: 'mint', rot: 30, delay: 1.2 },
     { x: 113, y: 75, size: 55, color: 'pink', rot: -10, delay: 0.3 },
-    { x: 182, y: 55, size: 80, color: 'blue', rot: 15, delay: 1.9 },
+    { x: 172, y: 55, size: 80, color: 'blue', rot: 15, delay: 1.9 },
 
     // ชั้นสาม
     { x: 0, y: 130, size: 70, color: 'purple', rot: -20, delay: 0.5 },
@@ -87,7 +87,7 @@ const ORBS = [
     // ชั้นบนสุด
     { x: 40, y: 182, size: 80, color: 'blue', rot: -18, delay: 2.0 },
     { x: 120, y: 200, size: 55, color: 'pink', rot: 22, delay: 0.6 },
-    { x: 160, y: 225, size: 70, color: 'mint', rot: -8, delay: 1.4 }
+    { x: 165, y: 215, size: 70, color: 'mint', rot: -8, delay: 1.4 }
 ];
 
 function buildOrbs() {
