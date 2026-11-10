@@ -68,22 +68,22 @@ const palettes = {
 */
 const ORBS = [
     // ชั้นล่างสุด
-    { x: 10, y: 0, size: 75, color: 'pink', rot: -15, delay: 0.0 },
-    { x: 72, y: 0, size: 40, color: 'blue', rot: 20, delay: 0.8 },
-    { x: 118, y: 0, size: 64, color: 'purple', rot: -30, delay: 1.5 },
-    { x: 190, y: 0, size: 40, color: 'mint', rot: 10, delay: 0.4 },
-    { x: 240, y: 0, size: 75, color: 'pink', rot: 25, delay: 2.1 },
+    { x: 10, y: 0, size: 85, color: 'pink', rot: -15, delay: 0.0 },
+    { x: 72, y: 0, size: 70, color: 'blue', rot: 20, delay: 0.8 },
+    { x: 118, y: 0, size: 55, color: 'purple', rot: -30, delay: 1.5 },
+    { x: 190, y: 0, size: 70, color: 'mint', rot: 10, delay: 0.4 },
+    { x: 240, y: 0, size: 85, color: 'pink', rot: 25, delay: 2.1 },
 
     // ชั้นกลาง
-    { x: 30, y: 56, size: 40, color: 'mint', rot: 30, delay: 1.2 },
-    { x: 90, y: 62, size: 75, color: 'blue', rot: -10, delay: 0.3 },
-    { x: 160, y: 66, size: 64, color: 'pink', rot: 15, delay: 1.9 },
-    { x: 212, y: 58, size: 40, color: 'purple', rot: -25, delay: 0.9 },
+    { x: 30, y: 56, size: 55, color: 'mint', rot: 30, delay: 1.2 },
+    { x: 90, y: 62, size: 70, color: 'blue', rot: -10, delay: 0.3 },
+    { x: 160, y: 66, size: 85, color: 'pink', rot: 15, delay: 1.9 },
+    { x: 212, y: 58, size: 55, color: 'purple', rot: -25, delay: 0.9 },
 
     // ชั้นบน
-    { x: 55, y: 112, size: 64, color: 'purple', rot: 12, delay: 1.6 },
-    { x: 120, y: 120, size: 46, color: 'mint', rot: -20, delay: 0.5 },
-    { x: 190, y: 116, size: 70, color: 'blue', rot: 28, delay: 2.3 }
+    { x: 55, y: 112, size: 70, color: 'purple', rot: 12, delay: 1.6 },
+    { x: 120, y: 120, size: 55, color: 'mint', rot: -20, delay: 0.5 },
+    { x: 190, y: 116, size: 85, color: 'blue', rot: 28, delay: 2.3 }
 ];
 
 function buildOrbs() {
