@@ -38,10 +38,10 @@ const wishes = [
     { text: "ตกใจหมดนวัตรับรักเค้าเลย", author: "— พี่ตะก้า รุ่น 68 - " },
     { text: "สู้ๆน้องงงง เรียนหนักแต่รักชัวร์", author: "— พี่เซญ่า รุ่น 69 - " },
     { text: "ขอให้น้องติดทุกคน เข้ามามีแต่ไรดีๆ", author: "— พี่Good รุ่น 69 - " },
-    { text: "", author: "— พี่ รุ่น 6 - " },
-    { text: "", author: "— พี่ รุ่น 6 - " },
-    { text: "", author: "— พี่ รุ่น 6 - " },
-    { text: "", author: "— พี่ รุ่น 6 - " }
+    // { text: "", author: "— พี่ รุ่น 6 - " },
+    // { text: "", author: "— พี่ รุ่น 6 - " },
+    // { text: "", author: "— พี่ รุ่น 6 - " },
+    // { text: "", author: "— พี่ รุ่น 6 - " }
 ];
 
 const drawBtn = document.getElementById('drawBtn');
